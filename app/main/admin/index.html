@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — JepongDevxyz</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">JD</div>
+  <div>
+    <h1>Admin Dashboard</h1>
+    <div class="sub">JepongDevxyz AI — owner only</div>
+  </div>
+  <div class="spacer"></div>
+  <button id="logoutBtn" class="btn danger-ghost hidden"><i data-lucide="log-out"></i>Logout</button>
+</div>
+
+<div class="wrap">
+  <!-- LOGIN VIEW -->
+  <div id="loginView" class="hidden">
+    <div class="panel" style="max-width:420px;margin:32px auto;">
+      <h2 class="section" style="margin-top:0;"><i data-lucide="lock"></i>Owner sign in</h2>
+      <label for="pw">Admin password</label>
+      <input type="password" id="pw" autocomplete="current-password" placeholder="••••••••">
+      <div class="mt"><button id="loginBtn" class="btn"><i data-lucide="key-round"></i>Mag-sign in</button></div>
+      <p class="muted center">Ikaw lang ang may access dito.</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD VIEW -->
+  <div id="dashView" class="hidden">
+    <h2 class="section"><i data-lucide="layout-dashboard"></i>Overview</h2>
+    <div class="cards" id="statCards"></div>
+
+    <h2 class="section"><i data-lucide="users"></i>Guests — huling 14 na araw</h2>
+    <div class="panel"><div class="bars" id="guestBars"></div><p class="muted" id="guestNote"></p></div>
+
+    <h2 class="section"><i data-lucide="banknote"></i>Revenue by plan</h2>
+    <div class="panel tablewrap"><table>
+      <thead><tr><th>Plan</th><th>Top-ups</th><th>Total</th></tr></thead>
+      <tbody id="planRows"><tr><td colspan="3" class="muted">Loading…</td></tr></tbody>
+    </table></div>
+
+    <h2 class="section"><i data-lucide="trophy"></i>Top 10 users</h2>
+    <div class="panel tablewrap"><table>
+      <thead><tr><th>Email</th><th>Words</th><th>Queries</th><th>Balance</th></tr></thead>
+      <tbody id="topRows"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+    </table></div>
+
+    <h2 class="section"><i data-lucide="coins"></i>Credit adjust</h2>
+    <div class="panel">
+      <label for="q">Hanapin ang user (email)</label>
+      <input type="text" id="q" placeholder="hal. juan@example.com" autocomplete="off">
+      <div id="userHits"></div>
+      <div id="pickedBox" class="hidden">
+        <p style="margin:14px 0 0;"><span class="badge">Napili</span></p>
+        <p style="margin:8px 0 0;"><strong id="pickedEmail"></strong><br>
+        <span class="muted" id="pickedId"></span><br>
+        <span class="muted">Balance ngayon: </span><strong id="pickedBal"></strong></p>
+        <div class="row">
+          <div style="flex:1;"><label for="amt">Amount (hal. 100 o -50)</label>
+          <input type="number" id="amt" placeholder="100"></div>
+          <div style="flex:2;"><label for="rsn">Reason</label>
+          <input type="text" id="rsn" placeholder="hal. promo bonus" maxlength="120"></div>
+        </div>
+        <div class="mt"><button id="adjustBtn" class="btn"><i data-lucide="plus-circle"></i>Kumpirmahin</button></div>
+      </div>
+    </div>
+
+    <footer>Powered by Jepong Devxyz</footer>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="admin.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
