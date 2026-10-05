@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JepongDevxyz Dashboard</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">JD</div>
+  <div>
+    <h1>JepongDevxyz Dashboard</h1>
+    <div class="sub">Stats at a glance</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <p class="muted">Piliin ang dashboard na bubuksan mo.</p>
+
+  <a class="biglink" href="/app/main/users/">
+    <span class="icon"><i data-lucide="user"></i></span>
+    <span>
+      <span class="t">User Dashboard</span>
+      <div class="d">Kita ang credits, usage, goals, at top-up history mo.</div>
+    </span>
+    <span class="go"><i data-lucide="arrow-right"></i></span>
+  </a>
+
+  <footer>Powered by Jepong Devxyz</footer>
+</div>
+
+<div id="toast"></div>
+<script>
+if (window.lucide) lucide.createIcons();
+</script>
+</body>
+</html>
