@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard — JepongDevxyz</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">JD</div>
+  <div>
+    <h1>User Dashboard</h1>
+    <div class="sub">JepongDevxyz AI — stats mo</div>
+  </div>
+  <div class="spacer"></div>
+  <button id="signoutBtn" class="btn danger-ghost hidden"><i data-lucide="log-out"></i>Sign out</button>
+</div>
+
+<div class="wrap">
+  <!-- SIGN-IN VIEW -->
+  <div id="loginView" class="hidden">
+    <div class="panel" style="max-width:420px;margin:32px auto;">
+      <h2 class="section" style="margin-top:0;"><i data-lucide="user"></i>Mag-sign in</h2>
+      <p class="muted">Gamitin ang iyong JepongDevxyz AI account.</p>
+      <label for="email">Email</label>
+      <input type="email" id="email" autocomplete="email" placeholder="ikaw@example.com">
+      <label for="pw">Password</label>
+      <input type="password" id="pw" autocomplete="current-password" placeholder="••••••••">
+      <div class="mt"><button id="loginBtn" class="btn"><i data-lucide="log-in"></i>Mag-sign in</button></div>
+      <p class="muted center">Wala pang account? Gumawa sa <a href="https://jepong-devxyz-ai.vercel.app" style="color:var(--accent);">JepongDevxyz AI</a>.</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD VIEW -->
+  <div id="dashView" class="hidden">
+    <h2 class="section"><i data-lucide="wallet"></i>Credits</h2>
+    <div class="cards" id="creditCards"></div>
+
+    <h2 class="section"><i data-lucide="activity"></i>Usage</h2>
+    <div class="cards" id="usageCards"></div>
+
+    <h2 class="section"><i data-lucide="target"></i>Goals</h2>
+    <div class="panel" id="goalsPanel"><p class="muted">Loading…</p></div>
+
+    <h2 class="section"><i data-lucide="receipt"></i>Top-up history</h2>
+    <div class="panel tablewrap"><table>
+      <thead><tr><th>Plan</th><th>Amount</th><th>Credits</th><th>Status</th><th>Date</th></tr></thead>
+      <tbody id="topupRows"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+    </table></div>
+
+    <footer>Powered by Jepong Devxyz</footer>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="users.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
